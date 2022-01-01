@@ -1,0 +1,43 @@
+Button {
+    -fx-skin: "javafx.scene.control.skin.ButtonSkin";
+}
+
+.toggle-button {
+    -fx-skin: "javafx.scene.control.skin.ToggleButtonSkin";
+}
+
+.combo-box-base.combo-box:editable > .text-input {
+    -fx-skin: "javafx.scene.control.skin.TextFieldSkin"
+}
+
+TextField {
+    -fx-skin: "javafx.scene.control.skin.TextFieldSkin";
+
+    -right-button-visible: true;
+}
+
+.password-field {
+    -fx-skin: "impl.jfxtras.styles.jmetro.PasswordFieldSkin";
+
+    -right-button-visible: true;
+}
+
+.progress-bar {
+    -fx-skin: "impl.jfxtras.styles.jmetro.ProgressBarSkin";
+}
+
+.slider {
+    -fx-skin: "impl.jfxtras.styles.jmetro.SliderSkin";
+}
+
+.spinner > .text-field {
+    -fx-skin: "javafx.scene.control.skin.TextFieldSkin";
+}
+
+.date-picker > .text-field {
+    -fx-skin: "javafx.scene.control.skin.TextFieldSkin";
+}
+
+.date-picker-popup .button {
+    -fx-skin: "javafx.scene.control.skin.ButtonSkin";
+}
