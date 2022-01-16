@@ -71,15 +71,17 @@ dependencies {
 
     // 组件库 https://github.com/sshahine/JFoenix
     implementation("com.jfoenix:jfoenix:9.0.10")
+    // 组件库 https://github.com/palexdev/MaterialFX
+    implementation ("io.github.palexdev:materialfx:11.12.0")
 
     // 工具包 https://hutool.cn/docs/#/
-    implementation("cn.hutool:hutool-all:5.7.18")
+    implementation("cn.hutool:hutool-all:5.7.19")
 
     // freemarker
     implementation("org.freemarker:freemarker:2.3.31")
 
     // 数据库连接池
-    implementation("com.zaxxer:HikariCP:5.0.0")
+    implementation("com.zaxxer:HikariCP:5.0.1")
 
     // 数据库驱动
     implementation("mysql:mysql-connector-java:8.0.27")
