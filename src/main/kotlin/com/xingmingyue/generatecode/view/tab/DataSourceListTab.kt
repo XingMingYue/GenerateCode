@@ -28,13 +28,15 @@ class DatabaseListTab : Fragment() {
                         EditorDatabase::cellBack to {
                             GlobalData.dataSourceList.add(dataSourceEntity)
                             GlobalData.saveDataSourceList()
-
                         }
                     )
                 ).openWindow()
             }
             button("导入").action {
-
+                GlobalData.importData(GlobalData.dataSourceList,"*.datasource")
+            }
+            button("导出").action {
+                GlobalData.exportData(GlobalData.dataSourceList,"*.datasource")
             }
         }
         center = tableview<DataSourceEntity> {

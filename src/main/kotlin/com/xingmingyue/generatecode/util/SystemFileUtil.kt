@@ -26,35 +26,35 @@ object SystemFileUtil {
     }
 
     /**
-     * 选择文件夹,如果用户点击取消或者关闭则直接结束程序
+     * 选择文件夹
      *
      * @param title            标题
-     * @param currentDirectory 初始目录
+     * @param initialDirectory 初始目录
      * @return 选中的文件夹
      */
-    fun selectFolder(title: String?, currentDirectory: File?): File? {
+    fun selectFolder(title: String?, initialDirectory: File? = null): File? {
         val directoryChooser = DirectoryChooser()
         directoryChooser.title = title
-        directoryChooser.initialDirectory = currentDirectory
+        directoryChooser.initialDirectory = initialDirectory
         return directoryChooser.showDialog(Stage())
     }
 
     /**
-     * 选择文件,如果用户点击取消或者关闭则直接结束程序
+     * 选择文件
      *
      * @param title            标题
-     * @param currentDirectory 初始目录
+     * @param initialDirectory 初始目录
      * @return 选中的文件夹
      */
     fun selectFile(
         title: String?,
-        currentDirectory: String?,
+        initialDirectory: String? = null,
         vararg extensionFilters: FileChooser.ExtensionFilter
     ): File {
         val fileChooser = FileChooser()
         fileChooser.title = title
-        if (currentDirectory != null) {
-            fileChooser.initialDirectory = File(currentDirectory)
+        if (initialDirectory != null) {
+            fileChooser.initialDirectory = File(initialDirectory)
         }
         fileChooser.extensionFilters.addAll(extensionFilters)
         return fileChooser.showOpenDialog(Stage())

@@ -19,6 +19,12 @@ class TableListTab : Fragment() {
             button("新增").action {
 
             }
+            button("导入").action {
+                GlobalData.importData(GlobalData.internalTableEntityList, "*.table")
+            }
+            button("导出").action {
+                GlobalData.exportData(GlobalData.internalTableEntityList, "*.table")
+            }
             button("SQL解析").action {
 
             }
@@ -31,6 +37,7 @@ class TableListTab : Fragment() {
             button("CHINER导入").action {
 
             }
+
         }
         center = tableview<DatabaseTableEntity> {
             items = GlobalData.internalTableEntityList

@@ -8,7 +8,10 @@ import com.xingmingyue.generatecode.entity.TemplateEntity
 import com.xingmingyue.generatecode.entity.database.DatabaseTableEntity
 import javafx.collections.FXCollections
 import javafx.collections.ObservableList
+import javafx.stage.FileChooser
+import javafx.stage.Stage
 import tornadofx.*
+import java.io.File
 
 /**
  * 数据工具类
@@ -53,13 +56,40 @@ object GlobalData {
     }
 
     /**
-     * 初始化数据inline fun <reified T : JsonModel>
+     * 初始化数据
      */
     private inline fun <reified T : JsonModel> initData(filePath: String, list: ObservableList<T>) {
         val dataStr = FileUtil.readUtf8String(FileUtil.touch(filePath))
         if (dataStr != null && dataStr.isNotEmpty()) {
             list.addAll(dataStr.byteInputStream().toJSONArray().toModel())
         }
+    }
+
+    /**
+     * 导入数据
+     */
+    inline fun <reified T : JsonModel> importData(list: ObservableList<T>, extensions: String) {
+        val fileChooser = FileChooser()
+        fileChooser.title = "请选择文件"
+        fileChooser.extensionFilters.add(FileChooser.ExtensionFilter("导入到...", extensions))
+        val file = fileChooser.showOpenDialog(Stage()) ?: return
+        val string = FileUtil.readUtf8String(file) ?: return
+        list.addAll(string.byteInputStream().toJSONArray().toModel())
+    }
+
+    /**
+     * 导出数据
+     */
+    inline fun <reified T : JsonModel> exportData(list: ObservableList<T>, extensions: String) {
+        val fileChooser = FileChooser()
+        fileChooser.extensionFilters.add(FileChooser.ExtensionFilter("导出到...", extensions))
+        val file: File = fileChooser.showSaveDialog(Stage()) ?: return
+        if (file.exists()) {
+            // 文件已存在，则删除文件
+            file.delete()
+        }
+        // 写入文件
+        FileUtil.writeUtf8String(list.toJSON().toString(), file)
     }
 
     /**

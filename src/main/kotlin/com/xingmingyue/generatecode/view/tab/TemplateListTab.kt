@@ -11,6 +11,7 @@ import com.xingmingyue.generatecode.view.GenerateCodeView
 import com.xingmingyue.generatecode.view.base.BaseEntityOperateFragment
 import tornadofx.*
 
+
 /**
  * 模板列表Tab
  */
@@ -30,7 +31,10 @@ class TemplateListTab : Fragment() {
                 ).openWindow()
             }
             button("导入").action {
-
+                GlobalData.importData(GlobalData.templateList, "*.template")
+            }
+            button("导出").action {
+                GlobalData.exportData(GlobalData.templateList, "*.template")
             }
         }
         center = tableview<TemplateEntity> {
