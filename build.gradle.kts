@@ -14,11 +14,12 @@ javafx {
 }
 
 repositories {
+    maven("https://maven.aliyun.com/nexus/content/groups/public/")
     mavenCentral()
 }
 
 application {
-    mainClass.set("com.example.MainKt")
+    mainClass.set("com.xingmingyue.generatecode.RunningAppKt")
 }
 
 val javaFXOptions = the<org.openjfx.gradle.JavaFXOptions>()
@@ -43,17 +44,17 @@ dependencies {
     }
 
     // 富文本组件 https://github.com/FXMisc/RichTextFX
-    implementation("org.fxmisc.richtext:richtextfx:0.10.7")
+    implementation("org.fxmisc.richtext:richtextfx:0.10.9")
 
     // https://github.com/dlsc-software-consulting-gmbh/PreferencesFX
-    implementation("com.dlsc.preferencesfx:preferencesfx-core:11.8.0")
+    implementation("com.dlsc.preferencesfx:preferencesfx-core:11.9.0")
 
     // jmetro
     implementation("org.jfxtras:jmetro:11.6.15")
 
     // jna https://github.com/java-native-access/jna
-    implementation("net.java.dev.jna:jna:5.9.0")
-    implementation("net.java.dev.jna:jna-platform:5.9.0")
+    implementation("net.java.dev.jna:jna:5.11.0")
+    implementation("net.java.dev.jna:jna-platform:5.11.0")
 
     // 程序运行时提供Css重载的能力 https://github.com/McFoggy/cssfx
     implementation("fr.brouillard.oss:cssfx:11.5.0")
@@ -63,19 +64,19 @@ dependencies {
 
     // 图标库 http://kordamp.org/ikonli/
     implementation(platform("org.kordamp.ikonli:ikonli-bom:12.2.0"))
-    implementation("org.kordamp.ikonli:ikonli-javafx:12.2.0")
-    implementation("org.kordamp.ikonli:ikonli-fontawesome-pack:12.2.0")
-    implementation("org.kordamp.ikonli:ikonli-fontawesome5-pack:12.2.0")
-    implementation("org.kordamp.ikonli:ikonli-antdesignicons-pack:12.2.0")
-    implementation("org.kordamp.ikonli:ikonli-materialdesign2-pack:12.2.0")
+    implementation("org.kordamp.ikonli:ikonli-javafx:12.3.1")
+    implementation("org.kordamp.ikonli:ikonli-fontawesome-pack:12.3.1")
+    implementation("org.kordamp.ikonli:ikonli-fontawesome5-pack:12.3.1")
+    implementation("org.kordamp.ikonli:ikonli-antdesignicons-pack:12.3.1")
+    implementation("org.kordamp.ikonli:ikonli-materialdesign2-pack:12.3.1")
 
     // 组件库 https://github.com/sshahine/JFoenix
     implementation("com.jfoenix:jfoenix:9.0.10")
     // 组件库 https://github.com/palexdev/MaterialFX
-    implementation ("io.github.palexdev:materialfx:11.12.0")
+    implementation ("io.github.palexdev:materialfx:11.13.3")
 
     // 工具包 https://hutool.cn/docs/#/
-    implementation("cn.hutool:hutool-all:5.7.19")
+    implementation("cn.hutool:hutool-all:5.7.22")
 
     // freemarker
     implementation("org.freemarker:freemarker:2.3.31")
@@ -84,8 +85,8 @@ dependencies {
     implementation("com.zaxxer:HikariCP:5.0.1")
 
     // 数据库驱动
-    implementation("mysql:mysql-connector-java:8.0.27")
-    implementation("com.oracle.database.jdbc:ojdbc11:21.4.0.0")
+    implementation("mysql:mysql-connector-java:8.0.28")
+    implementation("com.oracle.database.jdbc:ojdbc11:21.5.0.0")
 }
 
 tasks {

@@ -199,6 +199,7 @@ class TemplateFileOutputListView : Fragment("模板文件输出") {
         left = listview<TemplateFileEntity> {
             items = templateFileOutputList.asObservable()
             cellFormat {
+                styleClass.addAll("table-cell")
                 text = this.item.fileName
             }
             selectionModel.selectedItemProperty().addListener { _, _, newValue ->

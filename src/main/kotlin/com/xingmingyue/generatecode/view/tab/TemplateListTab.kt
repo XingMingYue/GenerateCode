@@ -42,6 +42,7 @@ class TemplateListTab : Fragment() {
             smartResize()
             column("操作", TemplateEntity::nameProperty).apply {
                 cellFormat {
+                    styleClass.addAll("table-cell")
                     val template = this@cellFormat.rowItem
                     graphic = hbox {
                         prefWidth = 200.0
@@ -128,6 +129,7 @@ class ConfigurationTemplate : Fragment("配置模板文件") {
             columnResizePolicy = SmartResize.POLICY
             items = templateEntity.templateFileList
             column("操作", TemplateFileEntity::nameProperty).cellFormat {
+                styleClass.addAll("table-cell")
                 val templateFileEntity = this@cellFormat.rowItem
                 graphic = hbox {
                     button("编辑").action {

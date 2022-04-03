@@ -44,6 +44,7 @@ class DatabaseListTab : Fragment() {
             columnResizePolicy = SmartResize.POLICY
             column("操作", DataSourceEntity::nameProperty).apply {
                 cellFormat {
+                    styleClass.addAll("table-cell")
                     val cf = this@cellFormat
                     graphic = hbox {
                         button("编辑").action {
